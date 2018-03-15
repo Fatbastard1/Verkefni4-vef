@@ -1,4 +1,6 @@
 require('dotenv').config();
+require('isomorphic-fetch');
+const cheerio = require('cheerio');
 
 /* todo require og stilla dót */
 
