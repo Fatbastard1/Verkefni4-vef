@@ -96,17 +96,18 @@ async function getTests(slug) {
   //console.log(tablesdata.text());
 
     const tables = [];
-    const tafladata = [];
 
-    
+
+
     tablesdata.each((i, el) => {
-    const title = $(el).eq(i).text().trim();
+    let title = null;
+    title = $(el).next();
     //console.log(title);
     const tafla = $(title).find('tbody');
 
+    const tafladata = [];
 
-
-    tafla.children().each((row) => {
+    tafla.children().each((j,row) => {
       const taflael = $(row).children();
       tafladata.push({
         course: $(taflael[0]).text(),
